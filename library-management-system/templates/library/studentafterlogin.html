@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard | Library System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  {% include "library/navbarstudent.html" %}
+
+  <div class="container mt-5">
+    <div class="text-center">
+      <div class="alert alert-success">
+        <h3 class="mb-0">Welcome to Library Management System</h3>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <h1 class="display-4 text-center">Hello {{ user.first_name }}!</h1>
+      <p class="lead text-center">
+        As a student, you can view your issued books, fines, and more.
+      </p>
+      <hr class="my-4">
+      <p class="text-center">Available Option:</p>
+
+      <div class="text-center">
+        <a href="{% url 'viewissuedbookbystudent' %}" class="btn btn-primary btn-lg">
+          View Issued Books
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>

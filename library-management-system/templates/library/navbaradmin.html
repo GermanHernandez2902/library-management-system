@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Navbar</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a href="{% url 'home' %}" class="navbar-brand font-weight-bold">Library Admin</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAdmin">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarAdmin">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="{% url 'home' %}" class="nav-link">Home</a>
+        </li>
+
+        <!-- Book Dropdown -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="bookDropdown" data-toggle="dropdown">Books</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'addbook' %}">Add Book</a>
+            <a class="dropdown-item" href="{% url 'viewbook' %}">View Books</a>
+          </div>
+        </li>
+
+        <!-- Issue Book Dropdown -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="issueDropdown" data-toggle="dropdown">Issue Book</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'issuebook' %}">Issue New Book</a>
+            <a class="dropdown-item" href="{% url 'viewissuedbook' %}">View Issued Books</a>
+          </div>
+        </li>
+
+        <!-- Student Dropdown -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="studentDropdown" data-toggle="dropdown">Students</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'viewstudent' %}">View Students</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Optional: spacer so content doesn't hide behind fixed navbar -->
+<div style="margin-top: 80px;"></div>
+
+</body>
+</html>

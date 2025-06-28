@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Access | Library System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  {% include "library/navbar.html" %}
+
+  <div class="container mt-5">
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Hello, Student 👋</h1>
+      <p class="lead">Welcome to the Online Library Management System.</p>
+      <hr class="my-4">
+      <p>You can access various features after logging in.</p>
+      <div class="mt-4">
+        <a class="btn btn-primary btn-lg mr-3" href="{% url 'studentsignup' %}">Sign Up</a>
+        <a class="btn btn-outline-primary btn-lg" href="{% url 'studentlogin' %}">Log In</a>
+      </div>
+    </div>
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>

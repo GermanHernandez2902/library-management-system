@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Library Management System</title>
+
+  <!-- Bootstrap & Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .jumbotron {
+      margin-bottom: 0;
+      padding: 3rem 2rem;
+      background-color: #fff;
+      border-radius: 0;
+      border-top: 4px solid #007bff;
+    }
+
+    .panel-option {
+      padding: 30px 20px;
+      border-radius: 8px;
+      background-color: #f1f1f1;
+      transition: transform 0.2s ease-in-out;
+      text-align: center;
+    }
+
+    .panel-option:hover {
+      transform: translateY(-5px);
+      background-color: #e9ecef;
+    }
+
+    .panel-option i {
+      font-size: 60px;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .btn-lg {
+      border-radius: 4px;
+      padding: 10px 25px;
+    }
+  </style>
+</head>
+<body>
+
+  {% include "library/navbar.html" %}
+
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Library Management System</h1>
+    <p class="lead">A modern system for managing students and books with ease and clarity.</p>
+    <hr class="my-4">
+    <p>Choose your portal below</p>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="panel-option">
+          <i class="fa fa-user-shield" aria-hidden="true"></i>
+          <h4 class="my-3">Admin Panel</h4>
+          <a class="btn btn-primary btn-lg" href="{% url 'adminclick' %}">Enter as Admin</a>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="panel-option">
+          <i class="fa fa-user-graduate" aria-hidden="true"></i>
+          <h4 class="my-3">Student Panel</h4>
+          <a class="btn btn-success btn-lg" href="{% url 'studentclick' %}">Enter as Student</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>

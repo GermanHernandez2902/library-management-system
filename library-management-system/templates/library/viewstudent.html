@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registered Students | Library System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  {% include "library/navbaradmin.html" %}
+
+  <div class="container mt-5">
+    <h3 class="text-center alert alert-success">Registered Students</h3>
+
+    {% if students %}
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>Enrollment</th>
+              <th>Branch</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in students %}
+              <tr>
+                <td>{{ s.get_name }}</td>
+                <td>{{ s.enrollment }}</td>
+                <td>{{ s.branch }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div class="alert alert-warning text-center">
+        No students registered in the library.
+      </div>
+    {% endif %}
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>

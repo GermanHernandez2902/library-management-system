@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+
+  <!-- Bootstrap 4 CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .dashboard-container {
+      max-width: 700px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-container h1 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    .dashboard-container p {
+      color: #555;
+    }
+
+    .btn-dashboard {
+      margin: 10px 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  {% include "library/navbaradmin.html" %}
+
+  <div class="container">
+    <div class="dashboard-container text-center">
+      <h1>Hello {{ user.first_name }} 👋</h1>
+      <p class="lead mt-3">
+        As an admin, you can manage the library: add books, issue them, view students and more.
+      </p>
+      <hr>
+      <h5 class="mb-4">Available Options</h5>
+
+      <a href="{% url 'addbook' %}" class="btn btn-primary btn-lg btn-dashboard">Add Book To Library</a>
+      <a href="{% url 'viewbook' %}" class="btn btn-secondary btn-lg btn-dashboard">View Available Books</a>
+      <a href="{% url 'issuebook' %}" class="btn btn-info btn-lg btn-dashboard">Issue New Book</a>
+      <a href="{% url 'viewissuedbook' %}" class="btn btn-success btn-lg btn-dashboard">View Issued Books</a>
+      <a href="{% url 'viewstudent' %}" class="btn btn-dark btn-lg btn-dashboard">View Students</a>
+    </div>
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>

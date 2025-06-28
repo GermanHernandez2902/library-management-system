@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Added</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  {% include "library/navbaradmin.html" %}
+
+  <div class="container mt-5 text-center">
+    <div class="alert alert-success" role="alert">
+      <h3 class="mb-0">Book Added Successfully!</h3>
+    </div>
+
+    <a href="{% url 'addbook' %}" class="btn btn-primary btn-lg mb-3">Add More Books</a><br>
+    <a href="{% url 'viewbook' %}" class="btn btn-secondary btn-lg">View Books in Library</a>
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>

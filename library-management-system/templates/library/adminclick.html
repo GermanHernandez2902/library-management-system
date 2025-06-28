@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #343a40;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    .admin-hero {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .admin-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .admin-hero p.lead {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-lg {
+      margin: 5px;
+      min-width: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  {% include "library/navbar.html" %}
+
+  <div class="admin-hero">
+    <h1 class="display-4">Hello, Admin 👋</h1>
+    <p class="lead">Welcome to the Library Management System.</p>
+    <hr class="bg-light w-25">
+    <p class="lead">You can add books, issue books, and much more after signing up or logging in.</p>
+    <div>
+      <a class="btn btn-primary btn-lg" href="{% url 'adminsignup' %}" role="button">Sign Up</a>
+      <a class="btn btn-outline-light btn-lg" href="{% url 'adminlogin' %}" role="button">Log In</a>
+    </div>
+  </div>
+
+  {% include "library/footer.html" %}
+
+</body>
+</html>
+
+
