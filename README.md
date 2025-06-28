@@ -67,18 +67,4 @@ library-management-system/
 📜 License
 This project is open-source and free to use under the MIT License.
 
-yaml
-Copiar
-Editar
 
----
-
-### ✅ ¿Qué hacer ahora?
-
-1. Guarda este contenido como `README.md` en la raíz del proyecto.
-2. Luego en tu terminal:
-
-```bash
-git add README.md
-git commit -m "Docs: add professional README with demo link"
-git push origin main
