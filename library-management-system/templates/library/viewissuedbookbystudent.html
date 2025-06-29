@@ -2,50 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>All Students | Library System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap 4 -->
+  <title>Issued Books | Library System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
 
-  {% include "library/navbaradmin.html" %}
+  {% include "library/navbarstudent.html" %}
 
   <div class="container mt-5">
-    <h3 class="text-center alert alert-info">Registered Students</h3>
+    <h3 class="text-center alert alert-info">Books Issued To You</h3>
 
-    {% if students %}
+    {% if error %}
+      <div class="alert alert-danger text-center">{{ error }}</div>
+    {% elif li1 and li2 %}
       <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped text-center">
+        <table class="table table-bordered table-hover text-center">
           <thead class="thead-dark">
             <tr>
-              <th>Full Name</th>
-              <th>Email</th>
+              <th>User</th>
               <th>Enrollment</th>
               <th>Branch</th>
-              <th>Mobile</th>
-              <th>Date Joined</th>
+              <th>Book Name</th>
+              <th>Author</th>
+              <th>Issued Date</th>
+              <th>Expiry Date</th>
+              <th>Fine (if any)</th>
             </tr>
           </thead>
           <tbody>
-            {% for student in students %}
-              <tr>
-                <td>{{ student.user.get_full_name }}</td>
-                <td>{{ student.user.email }}</td>
-                <td>{{ student.enrollment }}</td>
-                <td>{{ student.branch }}</td>
-                <td>{{ student.mobile }}</td>
-                <td>{{ student.user.date_joined|date:"Y-m-d" }}</td>
-              </tr>
+            {% for i in li1|length|add:"0"|make_list %}
+              {% with i=forloop.counter0 %}
+                <tr>
+                  <td>{{ li1.i.0 }}</td>
+                  <td>{{ li1.i.1 }}</td>
+                  <td>{{ li1.i.2 }}</td>
+                  <td>{{ li1.i.3 }}</td>
+                  <td>{{ li1.i.4 }}</td>
+                  <td>{{ li2.i.0 }}</td>
+                  <td>{{ li2.i.1 }}</td>
+                  <td>${{ li2.i.2 }}</td>
+                </tr>
+              {% endwith %}
             {% endfor %}
           </tbody>
         </table>
       </div>
     {% else %}
-      <div class="alert alert-warning text-center">
-        No students registered yet.
-      </div>
+      <div class="alert alert-warning text-center">No books issued yet.</div>
     {% endif %}
   </div>
 
@@ -53,3 +57,4 @@
 
 </body>
 </html>
+
